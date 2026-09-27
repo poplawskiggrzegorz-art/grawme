@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GrawMe | Moja pasja</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+        }
+
+        header h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #ccc;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0a0a0a;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GrawMe</h1>
+        <p>Pasja, która nabiera kształtu</p>
+    </header>
+
+    <section class="about">
+        <h2>O mnie</h2>
+
+        <p>
+            Nazywam się Grzegorz i rozpoczynam swoją przygodę jako
+            <strong>GrawMe</strong>.
+            <br><br>
+            To miejsce powstało z pasji do mojego hobby.
+            Chcę dzielić się tutaj moimi realizacjami, pomysłami
+            i efektami pracy.
+            <br><br>
+            Być może z czasem, dzięki Wam, moja pasja przerodzi się
+            w coś większego i poważniejszego.
+        </p>
+    </section>
+
+    <section>
+        <h2>Moje realizacje</h2>
+
+        <div class="gallery">
+
+            <img src="images/realizacja1.jpg" alt="Realizacja 1">
+
+            <img src="images/realizacja2.jpg" alt="Realizacja 2">
+
+            <img src="images/realizacja3.jpg" alt="Realizacja 3">
+
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Kontakt</h2>
+
+        <p>
+            Jeśli podobają Ci się moje realizacje,
+            zapraszam do kontaktu.
+        </p>
+    </section>
+
+    <footer>
+        © 2026 GrawMe
+    </footer>
+
+</body>
+</html>
