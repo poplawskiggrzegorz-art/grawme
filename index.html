@@ -46,6 +46,7 @@
         h2 {
             font-size: 32px;
             margin-bottom: 25px;
+            text-align: center;
         }
 
         .about {
@@ -59,6 +60,36 @@
             color: #ccc;
         }
 
+        /* =========================
+           TIKTOK
+        ========================= */
+
+        .tiktok-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tiktok-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tiktok-container iframe {
+            width: 325px;
+            height: 578px;
+            max-width: 100%;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* =========================
+           GALERIA
+        ========================= */
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -71,15 +102,29 @@
             object-fit: cover;
             border-radius: 12px;
             transition: transform 0.3s;
+            display: block;
         }
 
         .gallery img:hover {
             transform: scale(1.03);
         }
 
+        /* =========================
+           KONTAKT
+        ========================= */
+
         .contact {
             text-align: center;
         }
+
+        .contact p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
 
         footer {
             text-align: center;
@@ -87,67 +132,193 @@
             background: #0a0a0a;
             color: #777;
         }
+
+        /* =========================
+           TELEFON
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 60px 20px;
+            }
+
+            header h1 {
+                font-size: 44px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 45px 15px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .about p {
+                font-size: 16px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery img {
+                height: auto;
+                max-height: 400px;
+            }
+
+            .tiktok-container iframe {
+                width: 100%;
+                max-width: 325px;
+                height: 578px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- =========================
+         NAGŁÓWEK
+    ========================= -->
 
     <header>
         <h1>GrawMe</h1>
         <p>Pasja, która nabiera kształtu</p>
     </header>
 
+
+    <!-- =========================
+         O MNIE
+    ========================= -->
+
     <section class="about">
+
         <h2>O mnie</h2>
 
         <p>
             Nazywam się Grzegorz i rozpoczynam swoją przygodę jako
             <strong>GrawMe</strong>.
             <br><br>
+
             To miejsce powstało z pasji do mojego hobby.
             Chcę dzielić się tutaj moimi realizacjami, pomysłami
             i efektami pracy.
             <br><br>
+
             Być może z czasem, dzięki Wam, moja pasja przerodzi się
             w coś większego i poważniejszego.
         </p>
+
     </section>
 
-    <section>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@grawme_laser_gifts/video/7596427861150502166" data-video-id="7596427861150502166" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@grawme_laser_gifts" href="https://www.tiktok.com/@grawme_laser_gifts?refer=embed">@grawme_laser_gifts</a> jesteście gotowi na współpracę?  💬 Napisz „GRAWER”, a wyślę szczegóły albo ❤️ Zostaw reakcję, jeśli chcesz swoją wersję <a title="grawme" target="_blank" href="https://www.tiktok.com/tag/grawme?refer=embed">#grawme</a> <a target="_blank" title="♬ dźwięk oryginalny - grawme_laser_gifts" href="https://www.tiktok.com/music/dźwięk-oryginalny-7596427858055744278?refer=embed">♬ dźwięk oryginalny - grawme_laser_gifts</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <!-- =========================
+         TIKTOK
+    ========================= -->
+
+    <section class="tiktok-section">
+
+        <h2>Moja realizacja</h2>
+
+        <div class="tiktok-container">
+
+            <iframe
+                src="https://www.tiktok.com/player/v1/7596427861150502166?controls=1&description=1"
+                width="325"
+                height="578"
+                frameborder="0"
+                allow="fullscreen"
+                title="TikTok GrawMe">
+            </iframe>
+
+        </div>
+
     </section>
 
+
+    <!-- =========================
+         GALERIA
+    ========================= -->
+
     <section>
+
         <h2>Moje realizacje</h2>
 
         <div class="gallery">
 
-    <img src="images/prezenty z grawerem" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 1.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 2.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 3.JPG" alt="Prezent z grawerem">
-    <img src="images/Iprezenty z grawerem 4.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 5.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 6.PNG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 7.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 8.PNG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 9.PNG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 10.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 11.JPG" alt="RPrezent z grawerem">
-    <img src="images/prezenty z grawerem 12.JPG" alt="Prezent z grawerem">
-    <img src="images/prezenty z grawerem 13.JPG" alt="Prezent z grawerem">
+            <img src="images/prezenty z grawerem.JPG"
+                 alt="Prezent z grawerem">
 
-</div>
+            <img src="images/prezenty z grawerem 1.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 2.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 3.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/Iprezenty z grawerem 4.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 5.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 6.PNG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 7.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 8.PNG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 9.PNG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 10.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 11.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 12.JPG"
+                 alt="Prezent z grawerem">
+
+            <img src="images/prezenty z grawerem 13.JPG"
+                 alt="Prezent z grawerem">
+
+        </div>
+
     </section>
 
+
+    <!-- =========================
+         KONTAKT
+    ========================= -->
+
     <section class="contact">
+
         <h2>Kontakt</h2>
 
         <p>
             Jeśli podobają Ci się moje realizacje,
             zapraszam do kontaktu.
         </p>
+
     </section>
+
+
+    <!-- =========================
+         STOPKA
+    ========================= -->
 
     <footer>
         © 2026 GrawMe
