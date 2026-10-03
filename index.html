@@ -397,6 +397,7 @@
 
         .category-card {
             position: relative;
+            display: block;
             min-height: 190px;
             padding: 0;
             overflow: hidden;
@@ -408,6 +409,7 @@
             cursor: pointer;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
             isolation: isolate;
+            text-decoration: none;
         }
 
         .category-card img {
@@ -1127,7 +1129,7 @@
 
         <div class="category-grid" id="gallery-filters" aria-label="Wybierz kategorię realizacji">
             <button class="category-card" type="button" data-category="metal" aria-label="Otwórz kategorię Metal">
-                <img src="images/webp/prezenty%20z%20grawerem%201.webp" alt="" loading="lazy" decoding="async">
+                <img src="images/webp/prezenty%20z%20grawerem%201b.webp" alt="" loading="lazy" decoding="async">
                 <span class="category-card-copy"><strong>Metal</strong><small></small></span>
             </button>
             <button class="category-card" type="button" data-category="wood" aria-label="Otwórz kategorię Drewno">
@@ -1166,6 +1168,10 @@
                 <img src="images/webp/prezenty%20z%20grawerem%2010.webp" alt="" loading="lazy" decoding="async">
                 <span class="category-card-copy"><strong>Pozostałe</strong><small></small></span>
             </button>
+            <a class="category-card" href="filmy.html" aria-label="Zobacz filmy z grawerem w kolorze">
+                <img src="images/webp/prezenty%20z%20grawerem%201.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Grawer w kolorze</strong><small>Filmy z realizacji ↗</small></span>
+            </a>
         </div>
 
         <button class="gallery-back" id="gallery-back" type="button" hidden>
