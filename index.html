@@ -105,8 +105,71 @@
             display: block;
         }
 
+        .gallery-item {
+            width: 100%;
+            border: 0;
+            padding: 0;
+            border-radius: 12px;
+            background: transparent;
+            cursor: zoom-in;
+        }
+
+        .gallery-item:focus-visible,
+        .lightbox-close:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+        }
+
         .gallery img:hover {
             transform: scale(1.03);
+        }
+
+        .lightbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            max-width: none;
+            max-height: none;
+            height: 100%;
+            border: 0;
+            padding: 5vh 4vw;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.94);
+            color: #fff;
+            cursor: zoom-out;
+        }
+
+        .lightbox::backdrop {
+            background: rgba(0, 0, 0, 0.88);
+        }
+
+        .lightbox img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 92vw;
+            max-height: 90vh;
+            margin: auto;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #888;
+            border-radius: 50%;
+            background: #222;
+            color: #fff;
+            font-size: 30px;
+            line-height: 1;
+            cursor: pointer;
         }
 
         /* =========================
@@ -253,30 +316,238 @@
 
         <div class="gallery">
 
-            <img src="images/prezenty z grawerem 1.jpg"
-                 alt="Ręcznie wykonany prezent z grawerem" loading="lazy">
-
-            <img src="images/prezenty z grawerem 1a.JPG"
-                 alt="Personalizowany upominek z grawerem" loading="lazy">
-
-            <img src="images/prezenty z grawerem 1b.jpg"
-                 alt="Przykład realizacji GrawMe" loading="lazy">
-
-            <img src="images/prezenty z grawerem 1c.PNG"
-                 alt="Projekt wykonany z grawerem" loading="lazy">
-
-            <img src="images/prezenty z grawerem 1d.jpg"
-                 alt="Prezent z indywidualnym grawerem" loading="lazy">
-
-            <img src="images/prezenty z grawerem 1e.PNG"
-                 alt="Personalizowana realizacja GrawMe" loading="lazy">
-
-            <img src="images/prezenty z grawerem 2.jpg"
-                 alt="Kolejny prezent z grawerem" loading="lazy">
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2010.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20100.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20104.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20108.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20111.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20112.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20115.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20120.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20121.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20122.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20123.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20125.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20126.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20127.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20128.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20129.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20130.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20131.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20132.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20133.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20134.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20135.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20137-heic.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20137-jpg.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20137.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20138.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20139.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20140.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20141.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20142.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20143.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20144.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20145.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20146.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20147.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20148.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20149.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20150.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20151.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20152.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201a.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201b.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201c.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201d.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201e.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%202.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%203.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2033.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2034.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2040.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2041.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2046.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2048.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2051.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2054.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2056.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2058.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2059.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2064.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2066.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2067.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2068.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2069.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2074.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2075.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2076.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2080.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2082.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2089.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2091.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2096.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2097.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%2099.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
 
         </div>
 
     </section>
+
+
+    <dialog class="lightbox" id="photo-lightbox" aria-label="Powiększone zdjęcie">
+        <button class="lightbox-close" type="button" aria-label="Zamknij podgląd">&times;</button>
+        <img id="lightbox-image" alt="Powiększone zdjęcie realizacji GrawMe">
+    </dialog>
 
 
     <!-- =========================
@@ -302,6 +573,32 @@
     <footer>
         © 2026 GrawMe
     </footer>
+
+    <script>
+        const lightbox = document.getElementById("photo-lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+
+        document.querySelectorAll(".gallery-item img").forEach((image) => {
+            image.parentElement.addEventListener("click", () => {
+                lightboxImage.src = image.src;
+                lightbox.showModal();
+            });
+        });
+
+        document.querySelector(".lightbox-close").addEventListener("click", () => {
+            lightbox.close();
+        });
+
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                lightbox.close();
+            }
+        });
+
+        lightbox.addEventListener("close", () => {
+            lightboxImage.removeAttribute("src");
+        });
+    </script>
 
 </body>
 </html>
