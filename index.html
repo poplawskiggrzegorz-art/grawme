@@ -125,7 +125,6 @@
         }
 
         .lightbox {
-            display: flex;
             align-items: center;
             justify-content: center;
             position: fixed;
@@ -140,6 +139,10 @@
             background: rgba(0, 0, 0, 0.94);
             color: #fff;
             cursor: zoom-out;
+        }
+
+        .lightbox[open] {
+            display: flex;
         }
 
         .lightbox::backdrop {
