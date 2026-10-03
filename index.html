@@ -15,6 +15,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 24px;
         }
 
         body {
@@ -24,21 +25,149 @@
             line-height: 1.6;
         }
 
+        .quick-menu {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            z-index: 30;
+        }
+
+        .quick-menu-toggle {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border: 1px solid rgba(214, 179, 106, 0.72);
+            border-radius: 50%;
+            background: rgba(20, 20, 20, 0.92);
+            color: #f4d990;
+            font: inherit;
+            font-size: 25px;
+            line-height: 1;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        }
+
+        .quick-menu-toggle:hover,
+        .quick-menu-toggle[aria-expanded="true"] {
+            background: #d6b36a;
+            color: #171717;
+            transform: translateY(-1px);
+        }
+
+        .quick-menu-toggle:focus-visible,
+        .quick-menu a:focus-visible,
+        .quick-category:focus-visible {
+            outline: 3px solid #f4d990;
+            outline-offset: 3px;
+        }
+
+        .quick-menu-panel {
+            position: absolute;
+            top: 58px;
+            left: 0;
+            width: min(290px, calc(100vw - 36px));
+            max-height: min(76vh, 560px);
+            overflow-y: auto;
+            padding: 12px;
+            border: 1px solid rgba(214, 179, 106, 0.48);
+            border-radius: 16px;
+            background: rgba(24, 24, 24, 0.98);
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.48);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+        }
+
+        .quick-menu.is-open .quick-menu-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .quick-menu-heading {
+            padding: 7px 10px 5px;
+            color: #d6b36a;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .quick-menu a,
+        .quick-category {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 9px 10px;
+            border: 0;
+            border-radius: 9px;
+            background: transparent;
+            color: #f3f3f3;
+            font: inherit;
+            font-size: 15px;
+            text-align: left;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.16s, color 0.16s;
+        }
+
+        .quick-menu a:hover,
+        .quick-category:hover,
+        .quick-category[aria-pressed="true"] {
+            background: rgba(214, 179, 106, 0.15);
+            color: #f4d990;
+        }
+
+        .quick-menu-divider {
+            height: 1px;
+            margin: 7px 4px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
         header {
+            position: relative;
+            overflow: hidden;
             text-align: center;
             padding: 80px 20px;
-            background: linear-gradient(135deg, #1a1a1a, #333);
+            min-height: 360px;
+            background: linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.42)), url("images/grawme-banner.webp") right center / cover no-repeat;
+        }
+
+        .hero-box {
+            position: absolute;
+            bottom: 12px;
+            left: -24px;
+            z-index: 0;
+            width: min(22vw, 270px);
+            max-height: calc(100% - 78px);
+            object-fit: contain;
+            border-radius: 7px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+        }
+
+        header h1,
+        header p,
+        header .header-actions {
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
             font-size: 60px;
             margin-bottom: 10px;
             letter-spacing: 3px;
+            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
         }
 
         header p {
             font-size: 20px;
             color: #ccc;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
         }
 
         .header-contact {
@@ -248,6 +377,10 @@
 
         .gallery-section[data-active-filter="medals"] {
             --gallery-mood: linear-gradient(rgba(22, 18, 10, 0.79), rgba(22, 18, 10, 0.86)), url("images/webp/prezenty%20z%20grawerem%20142.webp");
+        }
+
+        .gallery-section[data-active-filter="jewelry"] {
+            --gallery-mood: linear-gradient(rgba(16, 15, 13, 0.78), rgba(16, 15, 13, 0.85)), url("images/webp/prezenty%20z%20grawerem%2075.webp");
         }
 
         .gallery-section[data-active-filter="other"] {
@@ -644,6 +777,10 @@
                 padding: 60px 20px;
             }
 
+            .hero-box {
+                display: none;
+            }
+
             header h1 {
                 font-size: 44px;
             }
@@ -753,11 +890,38 @@
 
 <body>
 
+    <nav class="quick-menu" id="quick-menu" aria-label="Szybka nawigacja">
+        <button class="quick-menu-toggle" id="quick-menu-toggle" type="button" aria-expanded="false" aria-controls="quick-menu-panel" aria-label="Otwórz menu nawigacji">
+            <span aria-hidden="true">☰</span>
+        </button>
+        <div class="quick-menu-panel" id="quick-menu-panel" inert>
+            <div class="quick-menu-heading">Przejdź do</div>
+            <a href="#top">Początek strony <span aria-hidden="true">↑</span></a>
+            <a href="#about">O mnie <span aria-hidden="true">↓</span></a>
+            <a href="#gallery-section">Wszystkie realizacje <span aria-hidden="true">↓</span></a>
+            <a href="#contact">Kontakt <span aria-hidden="true">↓</span></a>
+            <div class="quick-menu-divider" aria-hidden="true"></div>
+            <div class="quick-menu-heading">Kategorie</div>
+            <button class="quick-category" type="button" data-quick-filter="all" aria-pressed="true">Wszystkie</button>
+            <button class="quick-category" type="button" data-quick-filter="metal" aria-pressed="false">Metal</button>
+            <button class="quick-category" type="button" data-quick-filter="wood" aria-pressed="false">Drewno</button>
+            <button class="quick-category" type="button" data-quick-filter="glass" aria-pressed="false">Szkło i akryl</button>
+            <button class="quick-category" type="button" data-quick-filter="stone" aria-pressed="false">Kamień</button>
+            <button class="quick-category" type="button" data-quick-filter="dog-tags" aria-pressed="false">Zawieszki dla pieska</button>
+            <button class="quick-category" type="button" data-quick-filter="pens" aria-pressed="false">Długopisy</button>
+            <button class="quick-category" type="button" data-quick-filter="nameplates" aria-pressed="false">Tabliczki znamionowe</button>
+            <button class="quick-category" type="button" data-quick-filter="medals" aria-pressed="false">Medale i puchary</button>
+            <button class="quick-category" type="button" data-quick-filter="jewelry" aria-pressed="false">Elementy biżuteryjne</button>
+            <button class="quick-category" type="button" data-quick-filter="other" aria-pressed="false">Pozostałe</button>
+        </div>
+    </nav>
+
     <!-- =========================
          NAGŁÓWEK
     ========================= -->
 
-    <header>
+    <header id="top">
+        <img class="hero-box" src="images/hero-box.webp" alt="Drewniana skrzynka z grawerem imienia i życzeń urodzinowych">
         <h1>GrawMe</h1>
         <p>Pasja, która nabiera kształtu</p>
         <nav class="header-actions" aria-label="Skróty strony">
@@ -778,7 +942,7 @@
     ========================= -->
 
     <section class="about">
-        <article class="about-card">
+        <article class="about-card" id="about">
             <button class="about-toggle" type="button" aria-expanded="false" aria-controls="about-copy">
                 <span>O mnie</span><span class="about-toggle-indicator" aria-hidden="true">⌄</span>
             </button>
@@ -844,6 +1008,7 @@
             <button class="gallery-filter" type="button" data-filter="pens" aria-pressed="false">Długopisy</button>
             <button class="gallery-filter" type="button" data-filter="nameplates" aria-pressed="false">Tabliczki znamionowe</button>
             <button class="gallery-filter" type="button" data-filter="medals" aria-pressed="false">Medale i puchary</button>
+            <button class="gallery-filter" type="button" data-filter="jewelry" aria-pressed="false">Elementy biżuteryjne</button>
             <button class="gallery-filter" type="button" data-filter="other" aria-pressed="false">Pozostałe</button>
         </div>
 
@@ -983,6 +1148,12 @@
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%201e.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201g.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%201h.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%202.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
@@ -1189,14 +1360,15 @@
         }).forEach((item) => gallery.append(item));
 
         const materialPhotos = {
-            metal: ["1a.webp", "1b.webp", "1d.webp", "1e.webp", "2.webp", "3.webp", "41.webp", "46.webp", "48.webp", "51.webp", "58.webp", "59.webp", "66.webp", "75.webp", "82.webp", "89.webp", "96.webp", "97.webp", "100.webp", "104.webp", "108.webp", "111.webp", "120.webp", "131.webp", "137.webp", "137-heic.webp", "137-jpg.webp", "138.webp", "140.webp", "145.webp", "146.webp", "147.webp", "150.webp", "151.webp", "152.webp"],
-            wood: ["1c.webp", "33.webp", "34.webp", "54.webp", "67.webp", "99.webp", "115.webp", "135.webp", "149.webp"],
+            metal: ["1a.webp", "1b.webp", "1d.webp", "1e.webp", "1h.webp", "2.webp", "3.webp", "41.webp", "46.webp", "48.webp", "51.webp", "58.webp", "59.webp", "66.webp", "82.webp", "89.webp", "96.webp", "97.webp", "100.webp", "104.webp", "108.webp", "111.webp", "120.webp", "131.webp", "137.webp", "137-heic.webp", "137-jpg.webp", "138.webp", "140.webp", "145.webp", "146.webp", "147.webp", "150.webp", "151.webp", "152.webp"],
+            wood: ["1c.webp", "1g.webp", "33.webp", "34.webp", "54.webp", "67.webp", "99.webp", "115.webp", "135.webp", "149.webp"],
             glass: ["56.webp", "74.webp", "91.webp"],
             stone: ["76.webp", "80.webp", "121.webp", "122.webp", "123.webp", "126.webp", "127.webp", "128.webp", "129.webp", "130.webp", "132.webp", "133.webp", "134.webp", "135.webp", "139.webp"],
             "dog-tags": ["148.webp"],
             pens: ["112.webp"],
             nameplates: ["68.webp", "69.webp", "144.webp"],
             medals: ["1.webp", "40.webp", "141.webp", "142.webp", "143.webp"],
+            jewelry: ["75.webp"],
             other: ["10.webp", "64.webp"]
         };
         const categoriesByPhoto = new Map();
@@ -1223,10 +1395,45 @@
                 document.querySelectorAll(".gallery-filter").forEach((button) => {
                     button.setAttribute("aria-pressed", String(button === filter));
                 });
+                document.querySelectorAll(".quick-category").forEach((button) => {
+                    button.setAttribute("aria-pressed", String(button.dataset.quickFilter === selected));
+                });
                 galleryItems.forEach((item) => {
                     item.hidden = selected !== "all" && !item.dataset.materials.split(" ").includes(selected);
                 });
             });
+        });
+
+        const quickMenu = document.getElementById("quick-menu");
+        const quickMenuToggle = document.getElementById("quick-menu-toggle");
+        const quickMenuPanel = document.getElementById("quick-menu-panel");
+        const setQuickMenuOpen = (isOpen) => {
+            quickMenu.classList.toggle("is-open", isOpen);
+            quickMenuToggle.setAttribute("aria-expanded", String(isOpen));
+            quickMenuToggle.setAttribute("aria-label", isOpen ? "Zamknij menu nawigacji" : "Otwórz menu nawigacji");
+            quickMenuPanel.inert = !isOpen;
+        };
+        quickMenuToggle.addEventListener("click", () => {
+            setQuickMenuOpen(quickMenuToggle.getAttribute("aria-expanded") !== "true");
+        });
+        quickMenuPanel.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => setQuickMenuOpen(false));
+        });
+        document.querySelectorAll(".quick-category").forEach((button) => {
+            button.addEventListener("click", () => {
+                document.querySelector(`.gallery-filter[data-filter="${button.dataset.quickFilter}"]`)?.click();
+                setQuickMenuOpen(false);
+                document.getElementById("gallery-section").scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+        document.addEventListener("click", (event) => {
+            if (!quickMenu.contains(event.target)) setQuickMenuOpen(false);
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && quickMenuToggle.getAttribute("aria-expanded") === "true") {
+                setQuickMenuOpen(false);
+                quickMenuToggle.focus();
+            }
         });
 
         const aboutToggle = document.querySelector(".about-toggle");
