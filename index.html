@@ -13,6 +13,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #111;
@@ -35,6 +39,35 @@
         header p {
             font-size: 20px;
             color: #ccc;
+        }
+
+        .header-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            padding: 11px 20px;
+            border: 1px solid rgba(214, 179, 106, 0.8);
+            border-radius: 999px;
+            background: rgba(214, 179, 106, 0.12);
+            color: #f4d990;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        }
+
+        .header-contact:hover {
+            transform: translateY(-2px);
+            background: #d6b36a;
+            color: #171717;
+        }
+
+        .header-contact:focus-visible,
+        .gallery-return:focus-visible,
+        .social-profile-link:focus-visible,
+        .social-qr-link:focus-visible {
+            outline: 3px solid #f4d990;
+            outline-offset: 4px;
         }
 
         section {
@@ -124,6 +157,42 @@
 
         .gallery-item[hidden] {
             display: none;
+        }
+
+        .gallery-return {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 16px;
+            border: 1px solid rgba(214, 179, 106, 0.8);
+            border-radius: 999px;
+            background: rgba(24, 24, 24, 0.94);
+            color: #f4d990;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 0.2s, transform 0.2s, visibility 0.2s, background-color 0.2s;
+        }
+
+        .gallery-return.is-visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .gallery-return:hover {
+            background: #d6b36a;
+            color: #171717;
         }
 
         .gallery img {
@@ -283,6 +352,117 @@
             font-weight: 600;
         }
 
+        .social-cards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin: 28px auto 0;
+            text-align: left;
+        }
+
+        .social-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 18px;
+            padding: 20px;
+            border: 1px solid rgba(214, 179, 106, 0.42);
+            border-radius: 20px;
+            background: linear-gradient(145deg, rgba(214, 179, 106, 0.1), #1b1b1b 62%);
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.22);
+        }
+
+        .social-card-info {
+            min-width: 0;
+        }
+
+        .social-card-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .social-brand-icon {
+            display: grid;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            background: #111;
+            color: #fff;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .social-brand-icon.tiktok {
+            text-shadow: -2px 0 #25f4ee, 2px 1px #fe2c55;
+        }
+
+        .social-brand-icon.facebook {
+            background: #1877f2;
+            font-family: Arial, sans-serif;
+            font-size: 31px;
+        }
+
+        .social-card-heading h3 {
+            color: #f5f0e4;
+            font-size: 18px;
+        }
+
+        .social-card-heading p {
+            margin: 0;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .social-profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #e0c17d;
+            font-weight: 700;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .social-profile-link:hover {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .social-qr-link {
+            display: grid;
+            justify-items: center;
+            gap: 7px;
+            color: #ddd;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .social-qr-code {
+            display: block;
+            width: 112px;
+            height: 112px;
+            padding: 7px;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .social-qr-link strong {
+            color: #f4d990;
+            font-size: 12px;
+        }
+
+        .social-qr-link small {
+            color: #aaa;
+            font-size: 11px;
+        }
+
         /* =========================
            STOPKA
         ========================= */
@@ -292,6 +472,16 @@
             padding: 30px;
             background: #0a0a0a;
             color: #777;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+            }
         }
 
         /* =========================
@@ -310,6 +500,10 @@
 
             header p {
                 font-size: 18px;
+            }
+
+            .header-contact {
+                margin-top: 20px;
             }
 
             section {
@@ -353,6 +547,38 @@
                 font-size: 15px;
             }
 
+            .social-cards {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin-top: 22px;
+            }
+
+            .social-card {
+                gap: 12px;
+                padding: 15px;
+            }
+
+            .social-qr-code {
+                width: 96px;
+                height: 96px;
+                padding: 6px;
+            }
+
+            .social-card-heading h3 {
+                font-size: 16px;
+            }
+
+            .social-profile-link {
+                font-size: 14px;
+            }
+
+            .gallery-return {
+                right: 12px;
+                bottom: 12px;
+                padding: 10px 13px;
+                font-size: 13px;
+            }
+
             .tiktok-container iframe {
                 width: 100%;
                 max-width: 325px;
@@ -371,6 +597,10 @@
     <header>
         <h1>GrawMe</h1>
         <p>Pasja, która nabiera kształtu</p>
+        <a class="header-contact" href="#contact">
+            Kontakt do mnie
+            <span aria-hidden="true">↓</span>
+        </a>
     </header>
 
 
@@ -427,11 +657,11 @@
          GALERIA
     ========================= -->
 
-    <section>
+    <section class="gallery-section" id="gallery-section">
 
         <h2>Moje realizacje</h2>
 
-        <div class="gallery-filters" role="group" aria-label="Filtruj realizacje według materiału">
+        <div class="gallery-filters" id="gallery-filters" role="group" aria-label="Filtruj realizacje według materiału" tabindex="-1">
             <button class="gallery-filter" type="button" data-filter="all" aria-pressed="true">Wszystkie</button>
             <button class="gallery-filter" type="button" data-filter="metal" aria-pressed="false">Metal</button>
             <button class="gallery-filter" type="button" data-filter="wood" aria-pressed="false">Drewno</button>
@@ -677,7 +907,7 @@
          KONTAKT
     ========================= -->
 
-    <section class="contact">
+    <section class="contact" id="contact">
 
         <h2>Kontakt</h2>
 
@@ -699,7 +929,53 @@
             </span>
         </a>
 
+        <div class="social-cards" aria-label="Profile GrawMe w mediach społecznościowych">
+            <article class="social-card">
+                <div class="social-card-info">
+                    <div class="social-card-heading">
+                        <span class="social-brand-icon tiktok" aria-hidden="true">♪</span>
+                        <div>
+                            <h3>TikTok</h3>
+                            <p>Zobacz moje realizacje</p>
+                        </div>
+                    </div>
+                    <a class="social-profile-link" href="https://www.tiktok.com/@grawme_laser_gifts" target="_blank" rel="noopener noreferrer">
+                        @grawme_laser_gifts <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <a class="social-qr-link" href="https://www.tiktok.com/@grawme_laser_gifts" target="_blank" rel="noopener noreferrer" aria-label="Zeskanuj kod QR aparatem telefonu, aby otworzyć TikTok GrawMe">
+                    <img class="social-qr-code" src="images/qr/tiktok.svg" alt="Kod QR do profilu TikTok GrawMe">
+                    <strong>Zeskanuj telefonem</strong>
+                    <small>aby otworzyć TikTok</small>
+                </a>
+            </article>
+
+            <article class="social-card">
+                <div class="social-card-info">
+                    <div class="social-card-heading">
+                        <span class="social-brand-icon facebook" aria-hidden="true">f</span>
+                        <div>
+                            <h3>Facebook</h3>
+                            <p>Odwiedź mój profil</p>
+                        </div>
+                    </div>
+                    <a class="social-profile-link" href="https://www.facebook.com/grzesiek.popawski/" target="_blank" rel="noopener noreferrer">
+                        Grzegorz Popławski <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <a class="social-qr-link" href="https://www.facebook.com/grzesiek.popawski/" target="_blank" rel="noopener noreferrer" aria-label="Zeskanuj kod QR aparatem telefonu, aby otworzyć Facebook GrawMe">
+                    <img class="social-qr-code" src="images/qr/facebook.svg" alt="Kod QR do profilu Facebook Grzegorza Popławskiego">
+                    <strong>Zeskanuj telefonem</strong>
+                    <small>aby otworzyć Facebook</small>
+                </a>
+            </article>
+        </div>
+
     </section>
+
+    <a class="gallery-return" id="gallery-return" href="#gallery-filters" aria-label="Przewiń do góry do wyboru kategorii galerii">
+        <span aria-hidden="true">↑</span> Wybór kategorii
+    </a>
 
 
     <!-- =========================
@@ -767,6 +1043,19 @@
                 });
             });
         });
+
+        const gallerySection = document.getElementById("gallery-section");
+        const galleryFilters = document.getElementById("gallery-filters");
+        const galleryReturn = document.getElementById("gallery-return");
+        const updateGalleryReturn = () => {
+            const sectionBounds = gallerySection.getBoundingClientRect();
+            const filtersBounds = galleryFilters.getBoundingClientRect();
+            const browsingGallery = sectionBounds.top < window.innerHeight && sectionBounds.bottom > 0;
+            galleryReturn.classList.toggle("is-visible", browsingGallery && filtersBounds.bottom < 0);
+        };
+        window.addEventListener("scroll", updateGalleryReturn, { passive: true });
+        window.addEventListener("resize", updateGalleryReturn);
+        updateGalleryReturn();
 
         document.querySelectorAll(".gallery-item img").forEach((image) => {
             image.parentElement.addEventListener("click", async () => {
