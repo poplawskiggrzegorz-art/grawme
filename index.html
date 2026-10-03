@@ -781,7 +781,13 @@
         @media (max-width: 600px) {
 
             header {
-                padding: 60px 20px;
+                min-height: 0;
+                padding: calc(25vw + 26px) 20px 40px;
+                background-color: #1a1a1a;
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.18) 70%, #1a1a1a 100%), url("images/grawme-banner.webp");
+                background-size: 100% 100%, 100% auto;
+                background-position: center top, center top;
+                background-repeat: no-repeat, no-repeat;
             }
 
             .hero-box {
