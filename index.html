@@ -410,6 +410,13 @@
             transition: background-color 0.2s, color 0.2s, border-color 0.2s;
         }
 
+        .gallery-filter-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
         .gallery-filter:hover,
         .gallery-filter[aria-pressed="true"] {
             border-color: #d6b36a;
@@ -901,6 +908,9 @@
             <a href="#gallery-section">Wszystkie realizacje <span aria-hidden="true">↓</span></a>
             <a href="#contact">Kontakt <span aria-hidden="true">↓</span></a>
             <div class="quick-menu-divider" aria-hidden="true"></div>
+            <div class="quick-menu-heading">Więcej</div>
+            <a href="filmy.html">Filmy z realizacji <span aria-hidden="true">↗</span></a>
+            <div class="quick-menu-divider" aria-hidden="true"></div>
             <div class="quick-menu-heading">Kategorie</div>
             <button class="quick-category" type="button" data-quick-filter="all" aria-pressed="true">Wszystkie</button>
             <button class="quick-category" type="button" data-quick-filter="metal" aria-pressed="false">Metal</button>
@@ -998,7 +1008,7 @@
 
         <h2>Moje realizacje</h2>
 
-        <div class="gallery-filters" id="gallery-filters" role="group" aria-label="Filtruj realizacje według materiału" tabindex="-1">
+        <div class="gallery-filters" id="gallery-filters" role="group" aria-label="Kategorie realizacji i filmy" tabindex="-1">
             <button class="gallery-filter" type="button" data-filter="all" aria-pressed="true">Wszystkie</button>
             <button class="gallery-filter" type="button" data-filter="metal" aria-pressed="false">Metal</button>
             <button class="gallery-filter" type="button" data-filter="wood" aria-pressed="false">Drewno</button>
@@ -1010,6 +1020,7 @@
             <button class="gallery-filter" type="button" data-filter="medals" aria-pressed="false">Medale i puchary</button>
             <button class="gallery-filter" type="button" data-filter="jewelry" aria-pressed="false">Elementy biżuteryjne</button>
             <button class="gallery-filter" type="button" data-filter="other" aria-pressed="false">Pozostałe</button>
+            <a class="gallery-filter gallery-filter-link" href="filmy.html" aria-label="Zobacz filmy z grawerem w kolorze">Grawer w kolorze <span aria-hidden="true">↗</span></a>
         </div>
 
         <div class="gallery">
