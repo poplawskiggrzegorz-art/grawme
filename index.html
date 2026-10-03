@@ -219,6 +219,70 @@
             font-size: 18px;
         }
 
+        .contact-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            max-width: 100%;
+            margin-top: 16px;
+            padding: 18px 24px;
+            border: 1px solid rgba(214, 179, 106, 0.55);
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(214, 179, 106, 0.16), rgba(29, 29, 29, 0.96) 58%);
+            color: #f5f0e4;
+            text-align: left;
+            text-decoration: none;
+            box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: #d6b36a;
+            box-shadow: 0 14px 38px rgba(214, 179, 106, 0.18);
+        }
+
+        .contact-card:focus-visible {
+            outline: 3px solid #d6b36a;
+            outline-offset: 4px;
+        }
+
+        .contact-card-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(214, 179, 106, 0.2);
+            color: #e0c17d;
+        }
+
+        .contact-card-icon svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        .contact-card-copy {
+            display: grid;
+            gap: 4px;
+            min-width: 0;
+        }
+
+        .contact-card-copy span {
+            color: #d6b36a;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .contact-card-copy strong {
+            overflow-wrap: anywhere;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
         /* =========================
            STOPKA
         ========================= */
@@ -278,6 +342,15 @@
             .gallery img {
                 height: auto;
                 max-height: 400px;
+            }
+
+            .contact-card {
+                gap: 12px;
+                padding: 16px;
+            }
+
+            .contact-card-copy strong {
+                font-size: 15px;
             }
 
             .tiktok-container iframe {
@@ -612,6 +685,19 @@
             Jeśli podobają Ci się moje realizacje,
             zapraszam do kontaktu.
         </p>
+
+        <a class="contact-card" href="mailto:poplawskig.grzegorz@gmail.com" aria-label="Napisz e-mail na adres poplawskig.grzegorz@gmail.com">
+            <span class="contact-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.75 6.75A2.25 2.25 0 0 1 6 4.5h12a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 18 19.5H6a2.25 2.25 0 0 1-2.25-2.25V6.75Z" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="m4.5 6 7.5 6 7.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span class="contact-card-copy">
+                <span>Napisz do mnie</span>
+                <strong>poplawskig.grzegorz@gmail.com</strong>
+            </span>
+        </a>
 
     </section>
 
