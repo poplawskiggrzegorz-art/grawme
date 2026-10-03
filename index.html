@@ -56,6 +56,24 @@
             transition: background-color 0.2s, color 0.2s, transform 0.2s;
         }
 
+        .header-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .header-actions .header-contact {
+            margin-top: 0;
+        }
+
+        .header-categories {
+            border-color: rgba(255, 255, 255, 0.34);
+            background: rgba(255, 255, 255, 0.07);
+            color: #f0f0f0;
+        }
+
         .header-contact:hover {
             transform: translateY(-2px);
             background: #d6b36a;
@@ -86,6 +104,57 @@
             text-align: center;
         }
 
+        .about-card {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 24px;
+            border: 1px solid rgba(214, 179, 106, 0.4);
+            border-radius: 18px;
+            background: linear-gradient(135deg, #1b1b1b, #24211b);
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            border: 0;
+            background: transparent;
+            color: #f4d990;
+            font: inherit;
+            font-size: 26px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .about-toggle-indicator {
+            transition: transform 0.2s ease;
+        }
+
+        .about-toggle[aria-expanded="true"] .about-toggle-indicator {
+            transform: rotate(180deg);
+        }
+
+        .about-copy {
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease;
+        }
+
+        .about-copy.is-open {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            margin-top: 18px;
+        }
+
+        .about-copy-inner {
+            overflow: hidden;
+        }
+
         .about p {
             max-width: 800px;
             margin: auto;
@@ -101,6 +170,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .tiktok-intro {
+            max-width: 700px;
+            margin: -12px auto 24px;
+            color: #d6b36a;
+            font-size: 17px;
+            text-align: center;
+            letter-spacing: 0.2px;
         }
 
         .tiktok-container {
@@ -127,6 +205,41 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+        }
+
+        .gallery-section {
+            max-width: 100%;
+            padding: 60px max(20px, calc((100% - 1100px) / 2));
+            background: var(--gallery-mood, linear-gradient(135deg, #161616, #1f1d19));
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            transition: background-color 0.45s ease;
+        }
+
+        .gallery-section[data-active-filter="metal"] {
+            --gallery-mood: linear-gradient(rgba(11, 17, 21, 0.78), rgba(11, 17, 21, 0.84)), url("images/webp/prezenty%20z%20grawerem%201.webp");
+        }
+
+        .gallery-section[data-active-filter="wood"] {
+            --gallery-mood: linear-gradient(rgba(27, 17, 10, 0.78), rgba(27, 17, 10, 0.84)), url("images/webp/prezenty%20z%20grawerem%2054.webp");
+        }
+
+        .gallery-section[data-active-filter="glass"] {
+            --gallery-mood: linear-gradient(rgba(9, 18, 21, 0.79), rgba(9, 18, 21, 0.85)), url("images/webp/prezenty%20z%20grawerem%2091.webp");
+        }
+
+        .gallery-section[data-active-filter="stone"] {
+            --gallery-mood: linear-gradient(rgba(16, 17, 16, 0.79), rgba(16, 17, 16, 0.85)), url("images/webp/prezenty%20z%20grawerem%2076.webp");
+        }
+
+        .gallery-section[data-active-filter="other"] {
+            --gallery-mood: radial-gradient(ellipse at 15% 8%, rgba(144, 108, 157, 0.24), transparent 52%), linear-gradient(135deg, #19151d, #28212e);
+        }
+
+        .gallery-section[data-active-filter="all"] {
+            --gallery-mood: radial-gradient(ellipse at 15% 8%, rgba(214, 179, 106, 0.16), transparent 52%), linear-gradient(135deg, #161616, #211f1b);
         }
 
         .gallery-filters {
@@ -205,12 +318,33 @@
         }
 
         .gallery-item {
+            position: relative;
             width: 100%;
             border: 0;
             padding: 0;
             border-radius: 12px;
             background: transparent;
             cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .gallery-item::after {
+            content: attr(data-photo-id);
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            z-index: 1;
+            padding: 3px 8px;
+            border: 1px solid rgba(244, 217, 144, 0.42);
+            border-radius: 999px;
+            background: rgba(12, 12, 12, 0.72);
+            color: #f4d990;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: 0.2px;
+            pointer-events: none;
+            backdrop-filter: blur(5px);
         }
 
         .gallery-item:focus-visible,
@@ -502,7 +636,7 @@
                 font-size: 18px;
             }
 
-            .header-contact {
+            .header-actions {
                 margin-top: 20px;
             }
 
@@ -518,9 +652,22 @@
                 font-size: 16px;
             }
 
+            .tiktok-intro {
+                max-width: 360px;
+                margin-top: -12px;
+                font-size: 15px;
+            }
+
             .gallery {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .gallery-section {
+                padding: 45px 15px;
+                background-attachment: scroll;
+                background-size: auto 100vh;
+                background-repeat: repeat-y;
             }
 
             .gallery-filters {
@@ -597,10 +744,16 @@
     <header>
         <h1>GrawMe</h1>
         <p>Pasja, która nabiera kształtu</p>
-        <a class="header-contact" href="#contact">
-            Kontakt do mnie
-            <span aria-hidden="true">↓</span>
-        </a>
+        <nav class="header-actions" aria-label="Skróty strony">
+            <a class="header-contact header-categories" href="#gallery-filters">
+                Wybór kategorii
+                <span aria-hidden="true">↓</span>
+            </a>
+            <a class="header-contact" href="#contact">
+                Kontakt do mnie
+                <span aria-hidden="true">↓</span>
+            </a>
+        </nav>
     </header>
 
 
@@ -609,23 +762,26 @@
     ========================= -->
 
     <section class="about">
-
-        <h2>O mnie</h2>
-
-        <p>
-            Nazywam się Grzegorz i rozpoczynam swoją przygodę jako
-            <strong>GrawMe</strong>.
-            <br><br>
-
-            To miejsce powstało z pasji do mojego hobby.
-            Chcę dzielić się tutaj moimi realizacjami, pomysłami
-            i efektami pracy.
-            <br><br>
-
-            Być może z czasem, dzięki Wam, moja pasja przerodzi się
-            w coś większego i poważniejszego.
-        </p>
-
+        <article class="about-card">
+            <button class="about-toggle" type="button" aria-expanded="false" aria-controls="about-copy">
+                <span>O mnie</span><span class="about-toggle-indicator" aria-hidden="true">⌄</span>
+            </button>
+            <div class="about-copy" id="about-copy" aria-hidden="true">
+                <div class="about-copy-inner">
+                    <p>
+                        Nazywam się Grzegorz i rozpoczynam swoją przygodę jako
+                        <strong>GrawMe</strong>.
+                        <br><br>
+                        To miejsce powstało z pasji do mojego hobby.
+                        Chcę dzielić się tutaj moimi realizacjami, pomysłami
+                        i efektami pracy.
+                        <br><br>
+                        Być może z czasem, dzięki Wam, moja pasja przerodzi się
+                        w coś większego i poważniejszego.
+                    </p>
+                </div>
+            </div>
+        </article>
     </section>
 
 
@@ -635,7 +791,8 @@
 
     <section class="tiktok-section">
 
-        <h2>Moja realizacja</h2>
+        <h2>W telegraficznym skrócie</h2>
+        <p class="tiktok-intro">Grzegorz • pasjonat graweru laserowego • tworzę personalizowane prezenty i pamiątki</p>
 
         <div class="tiktok-container">
 
@@ -657,7 +814,7 @@
          GALERIA
     ========================= -->
 
-    <section class="gallery-section" id="gallery-section">
+    <section class="gallery-section" id="gallery-section" data-active-filter="all">
 
         <h2>Moje realizacje</h2>
 
@@ -1028,13 +1185,17 @@
         });
 
         galleryItems.forEach((item) => {
-            const filename = photoName(item).replace("prezenty z grawerem ", "") + ".webp";
+            const photoId = photoName(item).replace(/^prezenty z grawerem /i, "");
+            const filename = photoId + ".webp";
+            item.dataset.photoId = photoId;
+            item.setAttribute("aria-label", `Powiększ zdjęcie realizacji GrawMe, numer ${photoId}`);
             item.dataset.materials = (categoriesByPhoto.get(filename) || ["other"]).join(" ");
         });
 
         document.querySelectorAll(".gallery-filter").forEach((filter) => {
             filter.addEventListener("click", () => {
                 const selected = filter.dataset.filter;
+                gallerySection.dataset.activeFilter = selected;
                 document.querySelectorAll(".gallery-filter").forEach((button) => {
                     button.setAttribute("aria-pressed", String(button === filter));
                 });
@@ -1042,6 +1203,15 @@
                     item.hidden = selected !== "all" && !item.dataset.materials.split(" ").includes(selected);
                 });
             });
+        });
+
+        const aboutToggle = document.querySelector(".about-toggle");
+        const aboutCopy = document.getElementById("about-copy");
+        aboutToggle.addEventListener("click", () => {
+            const isOpen = aboutToggle.getAttribute("aria-expanded") !== "true";
+            aboutToggle.setAttribute("aria-expanded", String(isOpen));
+            aboutCopy.setAttribute("aria-hidden", String(!isOpen));
+            aboutCopy.classList.toggle("is-open", isOpen);
         });
 
         const gallerySection = document.getElementById("gallery-section");
