@@ -388,6 +388,109 @@
             margin: 0 auto 28px;
         }
 
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            position: relative;
+            min-height: 190px;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(244, 217, 144, 0.32);
+            border-radius: 16px;
+            background: #171717;
+            color: #fff;
+            text-align: left;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+            isolation: isolate;
+        }
+
+        .category-card img {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .category-card::after {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 15%, rgba(0, 0, 0, 0.82) 100%);
+            content: "";
+        }
+
+        .category-card:hover img,
+        .category-card:focus-visible img {
+            transform: scale(1.06);
+        }
+
+        .category-card:focus-visible,
+        .gallery-back:focus-visible {
+            outline: 3px solid #f4d990;
+            outline-offset: 4px;
+        }
+
+        .category-card-copy {
+            position: absolute;
+            right: 18px;
+            bottom: 16px;
+            left: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .category-card-copy strong {
+            font-size: 21px;
+        }
+
+        .category-card-copy small {
+            color: #f4d990;
+            font-size: 13px;
+        }
+
+        .gallery-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 22px;
+            padding: 10px 16px;
+            border: 1px solid rgba(214, 179, 106, 0.75);
+            border-radius: 999px;
+            background: rgba(20, 20, 20, 0.85);
+            color: #f4d990;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .gallery-back:hover {
+            background: #d6b36a;
+            color: #171717;
+        }
+
+        .gallery[hidden],
+        .gallery-filters[hidden],
+        .category-grid[hidden],
+        .gallery-back[hidden],
+        .gallery-current-category[hidden] {
+            display: none;
+        }
+
+        .gallery-current-category {
+            margin: -12px 0 24px;
+            color: #f4d990;
+            text-align: center;
+        }
+
         .gallery-filter {
             padding: 10px 18px;
             border: 1px solid #666;
@@ -814,6 +917,30 @@
                 gap: 20px;
             }
 
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .category-card {
+                min-height: 145px;
+                border-radius: 12px;
+            }
+
+            .category-card-copy {
+                right: 11px;
+                bottom: 11px;
+                left: 11px;
+            }
+
+            .category-card-copy strong {
+                font-size: 16px;
+            }
+
+            .category-card-copy small {
+                font-size: 12px;
+            }
+
             .gallery-section {
                 padding: 45px 15px;
                 background-attachment: scroll;
@@ -998,7 +1125,55 @@
 
         <h2>Moje realizacje</h2>
 
-        <div class="gallery-filters" id="gallery-filters" role="group" aria-label="Kategorie realizacji i filmy" tabindex="-1">
+        <div class="category-grid" id="gallery-filters" aria-label="Wybierz kategorię realizacji">
+            <button class="category-card" type="button" data-category="metal" aria-label="Otwórz kategorię Metal">
+                <img src="images/webp/prezenty%20z%20grawerem%201.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Metal</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="wood" aria-label="Otwórz kategorię Drewno">
+                <img src="images/webp/prezenty%20z%20grawerem%2054.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Drewno</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="glass" aria-label="Otwórz kategorię Szkło i akryl">
+                <img src="images/webp/prezenty%20z%20grawerem%2074.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Szkło i akryl</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="stone" aria-label="Otwórz kategorię Kamień">
+                <img src="images/webp/prezenty%20z%20grawerem%2076.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Kamień</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="dog-tags" aria-label="Otwórz kategorię Zawieszki dla pieska">
+                <img src="images/webp/prezenty%20z%20grawerem%20148.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Zawieszki dla pieska</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="pens" aria-label="Otwórz kategorię Długopisy">
+                <img src="images/webp/prezenty%20z%20grawerem%20112.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Długopisy</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="nameplates" aria-label="Otwórz kategorię Tabliczki znamionowe">
+                <img src="images/webp/prezenty%20z%20grawerem%20144.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Tabliczki znamionowe</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="medals" aria-label="Otwórz kategorię Medale i puchary">
+                <img src="images/webp/prezenty%20z%20grawerem%20142.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Medale i puchary</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="jewelry" aria-label="Otwórz kategorię Elementy biżuteryjne">
+                <img src="images/webp/prezenty%20z%20grawerem%2075.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Elementy biżuteryjne</strong><small></small></span>
+            </button>
+            <button class="category-card" type="button" data-category="other" aria-label="Otwórz kategorię Pozostałe">
+                <img src="images/webp/prezenty%20z%20grawerem%2010.webp" alt="" loading="lazy" decoding="async">
+                <span class="category-card-copy"><strong>Pozostałe</strong><small></small></span>
+            </button>
+        </div>
+
+        <button class="gallery-back" id="gallery-back" type="button" hidden>
+            <span aria-hidden="true">←</span> Wróć do kategorii
+        </button>
+        <p class="gallery-current-category" id="gallery-current-category" aria-live="polite" hidden></p>
+
+        <div class="gallery-filters" id="gallery-filter-buttons" role="group" aria-label="Kategorie realizacji i filmy" tabindex="-1" hidden>
             <button class="gallery-filter" type="button" data-filter="all" aria-pressed="true">Wszystkie</button>
             <button class="gallery-filter" type="button" data-filter="metal" aria-pressed="false">Metal</button>
             <button class="gallery-filter" type="button" data-filter="wood" aria-pressed="false">Drewno</button>
@@ -1013,7 +1188,7 @@
             <a class="gallery-filter gallery-filter-link" href="filmy.html" aria-label="Zobacz filmy z grawerem w kolorze">Grawer w kolorze <span aria-hidden="true">↗</span></a>
         </div>
 
-        <div class="gallery">
+        <div class="gallery" hidden>
 
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%201.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
@@ -1052,6 +1227,9 @@
                 <img src="images/webp/prezenty%20z%20grawerem%20123.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20125.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%20126.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
@@ -1080,6 +1258,9 @@
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%20135.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+            </button>
+            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
+                <img src="images/webp/prezenty%20z%20grawerem%20136.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%20137-heic.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
@@ -1389,10 +1570,58 @@
             item.dataset.materials = (categoriesByPhoto.get(filename) || ["other"]).join(" ");
         });
 
+        const gallerySection = document.getElementById("gallery-section");
+        const categoryGrid = document.querySelector(".category-grid");
+        const galleryBack = document.getElementById("gallery-back");
+        const galleryCurrentCategory = document.getElementById("gallery-current-category");
+        const categoryLabels = {
+            metal: "Metal",
+            wood: "Drewno",
+            glass: "Szkło i akryl",
+            stone: "Kamień",
+            "dog-tags": "Zawieszki dla pieska",
+            pens: "Długopisy",
+            nameplates: "Tabliczki znamionowe",
+            medals: "Medale i puchary",
+            jewelry: "Elementy biżuteryjne",
+            other: "Pozostałe",
+            all: "Wszystkie realizacje"
+        };
+        document.querySelectorAll(".category-card").forEach((card) => {
+            const category = card.dataset.category;
+            const count = galleryItems.filter((item) => item.dataset.materials.split(" ").includes(category)).length;
+            card.querySelector("small").textContent = `${count} ${count === 1 ? "realizacja" : count >= 2 && count <= 4 ? "realizacje" : "realizacji"}`;
+            card.addEventListener("click", () => {
+                document.querySelector(`.gallery-filter[data-filter="${category}"]`)?.click();
+                gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+
+        const showCategoryOverview = () => {
+            categoryGrid.hidden = false;
+            gallery.hidden = true;
+            galleryBack.hidden = true;
+            galleryCurrentCategory.hidden = true;
+            gallerySection.dataset.activeFilter = "all";
+            document.querySelectorAll(".gallery-filter").forEach((button) => {
+                button.setAttribute("aria-pressed", String(button.dataset.filter === "all"));
+            });
+            document.querySelectorAll(".quick-category").forEach((button) => {
+                button.setAttribute("aria-pressed", "false");
+            });
+            updateGalleryReturn();
+        };
+        galleryBack.addEventListener("click", showCategoryOverview);
+
         document.querySelectorAll(".gallery-filter").forEach((filter) => {
             filter.addEventListener("click", () => {
                 const selected = filter.dataset.filter;
                 gallerySection.dataset.activeFilter = selected;
+                categoryGrid.hidden = true;
+                gallery.hidden = false;
+                galleryBack.hidden = false;
+                galleryCurrentCategory.hidden = false;
+                galleryCurrentCategory.textContent = `${categoryLabels[selected] || "Realizacje"} · ${galleryItems.filter((item) => selected === "all" || item.dataset.materials.split(" ").includes(selected)).length} zdjęć`;
                 document.querySelectorAll(".gallery-filter").forEach((button) => {
                     button.setAttribute("aria-pressed", String(button === filter));
                 });
@@ -1402,6 +1631,7 @@
                 galleryItems.forEach((item) => {
                     item.hidden = selected !== "all" && !item.dataset.materials.split(" ").includes(selected);
                 });
+                updateGalleryReturn();
             });
         });
 
@@ -1446,17 +1676,19 @@
             aboutCopy.classList.toggle("is-open", isOpen);
         });
 
-        const gallerySection = document.getElementById("gallery-section");
-        const galleryFilters = document.getElementById("gallery-filters");
         const galleryReturn = document.getElementById("gallery-return");
         const updateGalleryReturn = () => {
             const sectionBounds = gallerySection.getBoundingClientRect();
-            const filtersBounds = galleryFilters.getBoundingClientRect();
             const browsingGallery = sectionBounds.top < window.innerHeight && sectionBounds.bottom > 0;
-            galleryReturn.classList.toggle("is-visible", browsingGallery && filtersBounds.bottom < 0);
+            galleryReturn.classList.toggle("is-visible", browsingGallery && categoryGrid.hidden && window.scrollY > gallerySection.offsetTop + 180);
         };
         window.addEventListener("scroll", updateGalleryReturn, { passive: true });
         window.addEventListener("resize", updateGalleryReturn);
+        galleryReturn.addEventListener("click", (event) => {
+            event.preventDefault();
+            showCategoryOverview();
+            categoryGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
         updateGalleryReturn();
 
         document.querySelectorAll(".gallery-item img").forEach((image) => {
