@@ -158,6 +158,7 @@
             margin: auto;
             border-radius: 8px;
             object-fit: contain;
+            cursor: zoom-out;
         }
 
         .lightbox-close {
@@ -354,9 +355,6 @@
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%20123.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/webp/prezenty%20z%20grawerem%20125.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
                 <img src="images/webp/prezenty%20z%20grawerem%20126.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
@@ -581,6 +579,27 @@
         const lightbox = document.getElementById("photo-lightbox");
         const lightboxImage = document.getElementById("lightbox-image");
 
+        const gallery = document.querySelector(".gallery");
+        const galleryItems = [...gallery.querySelectorAll(".gallery-item")];
+        const photoName = (item) => {
+            const image = item.querySelector("img");
+            return decodeURIComponent(new URL(image.getAttribute("src"), document.baseURI).pathname)
+                .split("/")
+                .pop()
+                .replace(/\.webp$/i, "");
+        };
+        const photoOrder = (item) => {
+            const match = photoName(item).match(/^prezenty z grawerem (\d+)([a-z]?)(?:-(heic|jpg))?$/i);
+            if (!match) return [Number.MAX_SAFE_INTEGER, "", 0, photoName(item)];
+            const variantOrder = { heic: 1, jpg: 2 };
+            return [Number(match[1]), match[2].toLowerCase(), variantOrder[match[3]?.toLowerCase()] || 0, photoName(item)];
+        };
+        galleryItems.sort((left, right) => {
+            const a = photoOrder(left);
+            const b = photoOrder(right);
+            return a[0] - b[0] || a[1].localeCompare(b[1]) || a[2] - b[2] || a[3].localeCompare(b[3], "pl", { numeric: true });
+        }).forEach((item) => gallery.append(item));
+
         document.querySelectorAll(".gallery-item img").forEach((image) => {
             image.parentElement.addEventListener("click", async () => {
                 const source = image.currentSrc || image.src;
@@ -604,7 +623,7 @@
         });
 
         lightbox.addEventListener("click", (event) => {
-            if (event.target === lightbox) {
+            if (event.target === lightbox || event.target === lightboxImage) {
                 lightbox.close();
             }
         });
