@@ -17,8 +17,8 @@ CATEGORIES = [
         "name": "Metal",
         "phrase": "metalu",
         "title": "Grawer laserowy na metalu | Realizacje GrawMe",
-        "description": "Zobacz przykłady realizacji GrawMe sklasyfikowanych jako grawer laserowy na metalu. Personalizowane pamiątki i przedmioty.",
-        "intro": "Na tej stronie zebrano przykłady prac z metalowej kategorii galerii GrawMe. Zdjęcia pokazują różne przedmioty i motywy; wybierz przykład, aby zobaczyć go w większym rozmiarze.",
+        "description": "Grawer laserowy na metalu: stal nierdzewna w kolorze, metale kolorowe i biżuteria. GrawMe, Lubań 59-800, wysyłka w Polsce.",
+        "intro": "GrawMe wykonuje grawer na metalowych przedmiotach, w tym kolorowy grawer na stali nierdzewnej oraz znakowanie metali kolorowych. Możliwa jest również personalizacja biżuterii ze srebra i złota, na przykład zawieszek. Poniżej znajdziesz przykładowe realizacje z galerii.",
         "ids": ["1a", "1b", "1d", "1e", "1h", "2", "3", "41", "46", "48", "51", "58", "59", "66", "82", "89", "96", "97", "100", "104", "108", "111", "120", "131", "140", "145", "146", "147", "150", "151", "152"],
     },
     {
@@ -26,8 +26,8 @@ CATEGORIES = [
         "name": "Drewno",
         "phrase": "drewnie",
         "title": "Grawer laserowy na drewnie | Realizacje GrawMe",
-        "description": "Poznaj przykłady graweru laserowego na drewnie z galerii GrawMe. Zobacz personalizowane prace i skontaktuj się w sprawie projektu.",
-        "intro": "Galeria drewna przedstawia wybrane realizacje GrawMe wykonane na drewnianych przedmiotach. Każde zdjęcie to przykład gotowego wzoru lub dedykacji; efekt zależy od konkretnego przedmiotu i projektu.",
+        "description": "Grawer na drewnie: personalizowane skrzynki, dedykacje i prezenty na wesele oraz rocznicę. Odbiór w Lubaniu, wysyłka w Polsce.",
+        "intro": "Grawer na drewnie sprawdza się przy prezentach z dedykacją oraz drewnianych skrzynkach przygotowywanych na rocznicę ślubu, wesele i inne okazje. Każdy wzór dopracowuję indywidualnie w uzgodnieniu z odbiorcą. Poniżej pokazuję przykłady z galerii GrawMe.",
         "ids": ["1c", "1g", "33", "34", "54", "67", "99", "115", "135", "149"],
     },
     {
@@ -35,8 +35,8 @@ CATEGORIES = [
         "name": "Szkło i akryl",
         "phrase": "szkle i akrylu",
         "title": "Grawer na szkle i akrylu | Realizacje GrawMe",
-        "description": "Zobacz przykłady realizacji GrawMe w kategorii szkło i akryl oraz poznaj możliwości personalizowanego graweru.",
-        "intro": "Ta część galerii zbiera prace oznaczone jako szkło i akryl. Zobacz dostępne przykłady, a jeśli masz pomysł na własny przedmiot, skontaktuj się z GrawMe, aby omówić szczegóły.",
+        "description": "Grawer na szkle i akrylu: kieliszki, szklanki oraz statuetki personalizowane. GrawMe, odbiór w Lubaniu i wysyłka w Polsce.",
+        "intro": "Oferta obejmuje grawerowane kieliszki do wina i szklanki do napojów, a także statuetki szklane i akrylowe. Możliwość znakowania zależy od konkretnego przedmiotu i oczekiwanego wzoru. Poniższe zdjęcia pokazują wybrane przykłady z galerii GrawMe.",
         "ids": ["56", "74", "91"],
     },
     {
@@ -44,8 +44,8 @@ CATEGORIES = [
         "name": "Kamień",
         "phrase": "kamieniu",
         "title": "Grawer laserowy na kamieniu | Realizacje GrawMe",
-        "description": "Zobacz realizacje GrawMe sklasyfikowane jako grawer na kamieniu: przykłady pamiątek i personalizowanych wzorów.",
-        "intro": "W galerii kamienia znajdziesz przykłady personalizowanych realizacji GrawMe na kamiennych przedmiotach. Zdjęcia pokazują różne motywy i projekty; kliknij wybraną pracę, aby powiększyć oryginał.",
+        "description": "Grawer laserowy na kamieniu i pamiątkowe realizacje GrawMe. Zobacz zdjęcia prac; odbiór w Lubaniu, wysyłka na terenie Polski.",
+        "intro": "Galeria pokazuje przykładowe realizacje graweru na kamiennych przedmiotach. Każdy projekt omawiam indywidualnie, ponieważ możliwości zależą od rodzaju i kształtu przedmiotu oraz przygotowanego wzoru.",
         "ids": ["76", "80", "121", "122", "123", "126", "127", "128", "129", "130", "132", "133", "134", "135", "137", "137-heic", "137-jpg", "138", "139"],
     },
 ]
@@ -74,7 +74,7 @@ def render_page(category: dict[str, object]) -> str:
         photo_url = quote(file_name, safe="-_.")
         photos.append(
             "\n        <figure class=\"photo-card\">\n"
-            f"            <img src=\"{PHOTO_ROOT}{photo_url}\" alt=\"Przykład realizacji graweru na {escape(name.lower())}, zdjęcie {escape(str(photo_id))}\" loading=\"lazy\" decoding=\"async\">\n"
+            f"            <img src=\"{PHOTO_ROOT}{photo_url}\" alt=\"Przykład graweru laserowego na {escape(phrase)}, zdjęcie {escape(str(photo_id))}\" loading=\"lazy\" decoding=\"async\">\n"
             f"            <figcaption>Przykład realizacji · {escape(name)}</figcaption>\n"
             "        </figure>"
         )
@@ -117,13 +117,13 @@ def render_page(category: dict[str, object]) -> str:
     <main>
         <section class="intro" aria-labelledby="examples-title">
             <h2 id="examples-title">Przykłady graweru na {escape(phrase)}</h2>
-            <p>Wszystkie zdjęcia pochodzą z galerii GrawMe. Pełny zbiór realizacji oraz dotychczasowe sposoby kontaktu — e-mail, TikTok, Facebook i kody QR — są dostępne na <a href="index.html">stronie głównej</a>.</p>
+            <p>Wszystkie zdjęcia pochodzą z galerii GrawMe. Pełny zbiór realizacji oraz dotychczasowe sposoby kontaktu — e-mail, TikTok, Facebook i kody QR — są dostępne na <a href="index.html">stronie głównej</a>. Zamówienia przyjmuję od jednej sztuki oraz w większych nakładach; wycena zależy od liczby przedmiotów i przygotowania projektu.</p>
         </section>
         <section class="photo-grid" aria-label="Zdjęcia realizacji: {escape(name.lower())}">{''.join(photos)}
         </section>
         <section class="contact-band" aria-labelledby="contact-title">
             <h2 id="contact-title">Masz pomysł na własny grawer?</h2>
-            <p>Napisz e-mail lub wybierz dotychczasowy kanał kontaktu na stronie GrawMe.</p>
+            <p>Odbiór osobisty: Lubań, 59-800. Wysyłka na terenie całej Polski. Typowy czas realizacji to do około 3 dni; termin może się wydłużyć przy większym nakładzie lub kolejce zamówień.</p>
             <a class="button" href="index.html#contact">Zobacz sposoby kontaktu</a>
         </section>
     </main>
@@ -158,9 +158,14 @@ def update_gallery_alt_text() -> None:
             description = f"Przykład personalizowanego graweru laserowego GrawMe, zdjęcie {photo_id}"
         return f"{match.group(1)}{photo_id}{match.group(3)}{description}{match.group(4)}"
 
-    updated, count = pattern.subn(describe, source)
+    gallery_pattern = re.compile(r'(<div class="gallery" hidden>)(.*?)(</div>)', re.DOTALL)
+    gallery_match = gallery_pattern.search(source)
+    if gallery_match is None:
+        raise RuntimeError("Could not find the image gallery in index.html")
+    updated_gallery, count = pattern.subn(describe, gallery_match.group(2))
     if count != 77:
         raise RuntimeError(f"Expected to update alt text for 77 gallery images, found {count}")
+    updated = source[:gallery_match.start(2)] + updated_gallery + source[gallery_match.end(2):]
     with path.open("w", encoding="utf-8", newline="") as destination:
         destination.write(updated)
 
