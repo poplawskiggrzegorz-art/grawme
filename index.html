@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" as="image" href="images/grawme-banner-mobile.webp" media="(max-width: 600px)">
-
-    <title>GrawMe | Moja pasja</title>
+    <meta name="description" content="Zobacz realizacje GrawMe: personalizowany grawer laserowy na metalu, drewnie, szkle, akrylu i kamieniu. Poznaj przykłady i skontaktuj się e-mailowo.">
+    <link rel="canonical" href="https://grawme.pl/">
+    <meta name="theme-color" content="#111111">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="GrawMe">
+    <meta property="og:title" content="Grawer laserowy i personalizowane prezenty | GrawMe">
+    <meta property="og:description" content="Zobacz przykłady personalizowanego graweru laserowego na różnych materiałach.">
+    <meta property="og:url" content="https://grawme.pl/">
+    <meta property="og:image" content="https://grawme.pl/images/grawme-banner.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Grawer laserowy i personalizowane prezenty | GrawMe</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GrawMe",
+      "url": "https://grawme.pl/",
+      "description": "Personalizowane prezenty i pamiątki z grawerem laserowym.",
+      "sameAs": [
+        "https://www.tiktok.com/@grawme_laser_gifts",
+        "https://www.facebook.com/grzesiek.popawski/"
+      ]
+    }
+    </script>
 
     <style>
         * {
@@ -147,7 +170,7 @@
         }
 
         header h1 {
-            font-size: 60px;
+            font-size: clamp(36px, 5vw, 60px);
             margin-bottom: 10px;
             letter-spacing: 3px;
             text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
@@ -210,6 +233,52 @@
             max-width: 1100px;
             margin: auto;
             padding: 60px 20px;
+        }
+
+        .seo-intro {
+            max-width: 100%;
+            padding: 36px 20px;
+            border-bottom: 1px solid rgba(214, 179, 106, 0.2);
+            background: linear-gradient(135deg, #191816, #111);
+            text-align: center;
+        }
+
+        .seo-intro-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .seo-intro h2 {
+            margin-bottom: 12px;
+            color: #f4d990;
+            font-size: clamp(24px, 3vw, 34px);
+        }
+
+        .seo-intro p {
+            max-width: 820px;
+            margin: 0 auto;
+            color: #d5d0c5;
+        }
+
+        .seo-category-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .seo-category-links a {
+            padding: 8px 14px;
+            border: 1px solid rgba(214, 179, 106, 0.55);
+            border-radius: 999px;
+            color: #f4d990;
+            text-decoration: none;
+        }
+
+        .seo-category-links a:hover,
+        .seo-category-links a:focus-visible {
+            background: rgba(214, 179, 106, 0.15);
         }
 
         h2 {
@@ -1051,8 +1120,8 @@
     ========================= -->
 
     <header id="top">
-        <h1>GrawMe</h1>
-        <p>Pasja, która nabiera kształtu</p>
+        <h1>GrawMe — grawer laserowy</h1>
+        <p>Personalizowane prezenty i pamiątki z grawerem laserowym</p>
         <nav class="header-actions" aria-label="Skróty strony">
             <a class="header-contact header-categories" href="#gallery-filters">
                 Wybór kategorii
@@ -1064,6 +1133,19 @@
             </a>
         </nav>
     </header>
+
+    <section class="seo-intro" aria-labelledby="seo-intro-title">
+        <div class="seo-intro-inner">
+            <h2 id="seo-intro-title">Grawer laserowy na różnych materiałach</h2>
+            <p>W galerii GrawMe znajdziesz przykłady personalizowanych realizacji na metalu, drewnie, szkle, akrylu i kamieniu. Zobacz, jak różnią się gotowe prace, i poznaj projekty przypisane do wybranego materiału.</p>
+            <nav class="seo-category-links" aria-label="Strony o grawerowaniu według materiału">
+                <a href="grawer-metal.html">Grawer na metalu</a>
+                <a href="grawer-drewno.html">Grawer na drewnie</a>
+                <a href="grawer-szklo-akryl.html">Grawer na szkle i akrylu</a>
+                <a href="grawer-kamien.html">Grawer na kamieniu</a>
+            </nav>
+        </div>
+    </section>
 
 
     <!-- =========================
@@ -1198,235 +1280,235 @@
         <div class="gallery" hidden>
 
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201.webp" alt="Przykład graweru laserowego na medalu lub pucharze, zdjęcie 1" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2010.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2010.webp" alt="Przykład graweru laserowego na przedmiocie, zdjęcie 10" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20100.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20100.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 100" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20104.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20104.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 104" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20108.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20108.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 108" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20111.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20111.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 111" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20112.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20112.webp" alt="Przykład graweru laserowego na długopisie, zdjęcie 112" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20115.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20115.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 115" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20120.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20120.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 120" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20121.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20121.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 121" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20122.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20122.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 122" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20123.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20123.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 123" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20125.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20125.webp" alt="Przykład personalizowanego graweru laserowego GrawMe, zdjęcie 125" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20126.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20126.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 126" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20127.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20127.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 127" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20128.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20128.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 128" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20129.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20129.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 129" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20130.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20130.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 130" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20131.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20131.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 131" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20132.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20132.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 132" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20133.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20133.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 133" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20134.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20134.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 134" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20135.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20135.webp" alt="Przykład graweru laserowego na drewnie i kamieniu, zdjęcie 135" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20136.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20136.webp" alt="Przykład personalizowanego graweru laserowego GrawMe, zdjęcie 136" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20137-heic.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20137-heic.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 137-heic" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20137-jpg.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20137-jpg.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 137-jpg" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20137.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20137.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 137" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20138.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20138.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 138" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20139.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20139.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 139" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20140.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20140.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 140" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20141.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20141.webp" alt="Przykład graweru laserowego na medalu lub pucharze, zdjęcie 141" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20142.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20142.webp" alt="Przykład graweru laserowego na medalu lub pucharze, zdjęcie 142" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20143.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20143.webp" alt="Przykład graweru laserowego na medalu lub pucharze, zdjęcie 143" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20144.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20144.webp" alt="Przykład graweru laserowego na tabliczce znamionowej, zdjęcie 144" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20145.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20145.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 145" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20146.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20146.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 146" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20147.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20147.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 147" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20148.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20148.webp" alt="Przykład graweru laserowego na zawieszce dla psa, zdjęcie 148" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20149.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20149.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 149" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20150.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20150.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 150" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20151.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20151.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 151" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%20152.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%20152.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 152" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201a.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201a.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 1a" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201b.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201b.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 1b" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201c.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201c.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 1c" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201d.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201d.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 1d" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201e.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201e.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 1e" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201g.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201g.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 1g" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%201h.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201h.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 1h" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%202.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%202.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 2" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%203.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%203.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 3" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2033.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2033.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 33" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2034.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2034.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 34" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2040.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2040.webp" alt="Przykład graweru laserowego na medalu lub pucharze, zdjęcie 40" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2041.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2041.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 41" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2046.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2046.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 46" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2048.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2048.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 48" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2051.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2051.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 51" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2054.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2054.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 54" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2056.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2056.webp" alt="Przykład graweru laserowego na szkle lub akrylu, zdjęcie 56" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2058.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2058.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 58" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2059.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2059.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 59" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2064.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2064.webp" alt="Przykład graweru laserowego na przedmiocie, zdjęcie 64" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2066.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2066.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 66" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2067.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2067.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 67" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2068.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2068.webp" alt="Przykład graweru laserowego na tabliczce znamionowej, zdjęcie 68" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2069.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2069.webp" alt="Przykład graweru laserowego na tabliczce znamionowej, zdjęcie 69" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2074.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2074.webp" alt="Przykład graweru laserowego na szkle lub akrylu, zdjęcie 74" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2075.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2075.webp" alt="Przykład graweru laserowego na elemencie biżuteryjnym, zdjęcie 75" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2076.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2076.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 76" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2080.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2080.webp" alt="Przykład graweru laserowego na kamieniu, zdjęcie 80" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2082.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2082.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 82" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2089.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2089.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 89" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2091.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2091.webp" alt="Przykład graweru laserowego na szkle lub akrylu, zdjęcie 91" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2096.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2096.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 96" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2097.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2097.webp" alt="Przykład graweru laserowego na metalu, zdjęcie 97" loading="lazy" decoding="async">
             </button>
             <button class="gallery-item" type="button" aria-label="Powiększ zdjęcie realizacji GrawMe">
-                <img src="images/thumbs/prezenty%20z%20grawerem%2099.webp" alt="Zdjęcie realizacji GrawMe" loading="lazy" decoding="async">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2099.webp" alt="Przykład graweru laserowego na drewnie, zdjęcie 99" loading="lazy" decoding="async">
             </button>
 
         </div>
