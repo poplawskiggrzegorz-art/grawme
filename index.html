@@ -235,6 +235,116 @@
             padding: 60px 20px;
         }
 
+        .work-hero {
+            display: grid;
+            max-width: 1240px;
+            min-height: 510px;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: clamp(36px, 7vw, 90px);
+            padding: 70px 42px;
+        }
+
+        .work-hero-copy { max-width: 610px; }
+        .section-eyebrow {
+            margin-bottom: 12px;
+            color: #e2bd69;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .work-hero h2 {
+            margin-bottom: 18px;
+            font-size: clamp(38px, 5.6vw, 68px);
+            line-height: 1.08;
+            text-align: left;
+        }
+        .work-hero-copy > p:not(.section-eyebrow) {
+            max-width: 560px;
+            margin-bottom: 26px;
+            color: #ddd;
+            font-size: clamp(17px, 2vw, 20px);
+        }
+        .work-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .work-hero-actions a {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 20px;
+            border: 1px solid #d6b36a;
+            border-radius: 999px;
+            color: #f4d990;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .work-hero-actions a:first-child { background: #d6b36a; color: #171717; }
+        .work-hero-actions a:hover { transform: translateY(-2px); }
+        .work-hero-visual {
+            position: relative;
+            min-height: 390px;
+            overflow: hidden;
+            border: 1px solid rgba(214, 179, 106, 0.38);
+            border-radius: 24px;
+            background: #1b1a17;
+        }
+        .work-hero-visual img { width: 100%; height: 100%; min-height: 390px; object-fit: cover; }
+        .work-hero-caption {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            left: 14px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 14px;
+            background: rgba(18,18,18,.94);
+        }
+        .work-hero-caption strong, .work-hero-caption span { display: block; }
+        .work-hero-caption span { margin-top: 3px; color: #ccc; font-size: 13px; }
+        .featured-work { max-width: 1240px; }
+        .featured-work h2, .project-help h2 { margin-bottom: 12px; text-align: left; }
+        .section-lead { max-width: 720px; margin-bottom: 28px; color: #ccc; }
+        .featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .featured-card {
+            overflow: hidden;
+            border: 1px solid rgba(214, 179, 106, 0.22);
+            border-radius: 18px;
+            background: #1b1a17;
+        }
+        .featured-card > img { display: block; width: 100%; height: 230px; object-fit: cover; }
+        .featured-card-copy { padding: 19px; }
+        .featured-card-copy .section-eyebrow { margin-bottom: 8px; font-size: 11px; }
+        .featured-card h3 { margin-bottom: 8px; font-size: 20px; }
+        .featured-card p:last-child { color: #ccc; font-size: 14px; }
+        .project-help { max-width: 1240px; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+        .step-card, .faq-list details {
+            border: 1px solid rgba(214, 179, 106, 0.2);
+            border-radius: 16px;
+            background: #1b1a17;
+        }
+        .step-card { padding: 22px; }
+        .step-number {
+            display: grid;
+            width: 36px;
+            height: 36px;
+            margin-bottom: 14px;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(214, 179, 106, 0.16);
+            color: #f4d990;
+            font-weight: 700;
+        }
+        .step-card h3 { margin-bottom: 8px; font-size: 18px; }
+        .step-card p, .faq-list p { color: #ccc; font-size: 14px; }
+        .faq-block { margin-top: 100px; }
+        .faq-list { display: grid; gap: 10px; margin-top: 22px; }
+        .faq-list details { padding: 16px 19px; }
+        .faq-list summary { cursor: pointer; font-weight: 700; }
+        .faq-list details p { padding: 12px 24px 2px 0; }
+        .work-hero-actions a:focus-visible, .faq-list summary:focus-visible { outline: 3px solid #f4d990; outline-offset: 4px; }
+
         .seo-intro {
             max-width: 100%;
             padding: 36px 20px;
@@ -943,6 +1053,13 @@
 
         @media (max-width: 600px) {
 
+            .work-hero { min-height: 0; grid-template-columns: 1fr; gap: 26px; padding: 48px 20px; }
+            .work-hero h2 { font-size: 40px; }
+            .work-hero-visual, .work-hero-visual img { min-height: 310px; }
+            .featured-grid, .steps-grid { grid-template-columns: 1fr; }
+            .featured-card > img { height: 245px; }
+            .faq-block { margin-top: 68px; }
+
             header {
                 min-height: 0;
                 padding: calc(25vw + 26px) 20px 40px;
@@ -1133,6 +1250,25 @@
             </a>
         </nav>
     </header>
+
+    <section class="work-hero" aria-labelledby="work-hero-title">
+        <div class="work-hero-copy">
+            <p class="section-eyebrow">GrawMe · przykładowe realizacje</p>
+            <h2 id="work-hero-title">Grawer laserowy na metalu, drewnie, szkle i kamieniu</h2>
+            <p>Personalizowane prezenty, pamiątki i przedmioty z własnym wzorem. Zobacz wybrane realizacje i opowiedz o swoim pomyśle.</p>
+            <div class="work-hero-actions">
+                <a href="#featured-work">Zobacz realizacje</a>
+                <a href="#contact">Zapytaj o grawer</a>
+            </div>
+        </div>
+        <div class="work-hero-visual">
+            <img src="images/thumbs/prezenty%20z%20grawerem%201b.webp" alt="Przykładowa realizacja graweru laserowego na metalu" fetchpriority="high" decoding="async">
+            <div class="work-hero-caption">
+                <strong>Personalizowany grawer laserowy</strong>
+                <span>Przykładowa realizacja GrawMe</span>
+            </div>
+        </div>
+    </section>
 
     <section class="seo-intro" aria-labelledby="seo-intro-title">
         <div class="seo-intro-inner">
@@ -1520,6 +1656,78 @@
         <button class="lightbox-close" type="button" aria-label="Zamknij podgląd">&times;</button>
         <img id="lightbox-image" alt="Powiększone zdjęcie realizacji GrawMe">
     </dialog>
+
+    <section class="featured-work" id="featured-work" aria-labelledby="featured-work-title">
+        <p class="section-eyebrow">Z pracowni GrawMe</p>
+        <h2 id="featured-work-title">Przykładowe realizacje graweru</h2>
+        <p class="section-lead">Każde zdjęcie pokazuje rzeczywisty przedmiot po personalizacji. Zobacz przykłady graweru na różnych materiałach.</p>
+        <div class="featured-grid">
+            <article class="featured-card">
+                <img src="images/thumbs/prezenty%20z%20grawerem%201b.webp" alt="Przykład graweru laserowego na metalowym przedmiocie" loading="lazy" decoding="async">
+                <div class="featured-card-copy">
+                    <p class="section-eyebrow">Metal · personalizacja</p>
+                    <h3>Grawer na metalu</h3>
+                    <p>Personalizowany wzór wykonany na metalowym przedmiocie.</p>
+                </div>
+            </article>
+            <article class="featured-card">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2054.webp" alt="Przykład graweru laserowego na drewnie" loading="lazy" decoding="async">
+                <div class="featured-card-copy">
+                    <p class="section-eyebrow">Drewno · dedykacja</p>
+                    <h3>Grawer na drewnie</h3>
+                    <p>Dedykacja lub dekoracyjny wzór na drewnianej powierzchni.</p>
+                </div>
+            </article>
+            <article class="featured-card">
+                <img src="images/thumbs/prezenty%20z%20grawerem%2076.webp" alt="Przykład graweru laserowego na kamieniu" loading="lazy" decoding="async">
+                <div class="featured-card-copy">
+                    <p class="section-eyebrow">Kamień · pamiątka</p>
+                    <h3>Grawer na kamieniu</h3>
+                    <p>Personalizowany grawer wykonany na kamiennej powierzchni.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="project-help" aria-labelledby="project-help-title">
+        <p class="section-eyebrow">Od pomysłu do gotowej pracy</p>
+        <h2 id="project-help-title">Jak zapytać o własny projekt?</h2>
+        <div class="steps-grid">
+            <article class="step-card">
+                <span class="step-number" aria-hidden="true">1</span>
+                <h3>Opisz przedmiot</h3>
+                <p>Napisz, co chcesz wygrawerować i z jakiego materiału jest przedmiot.</p>
+            </article>
+            <article class="step-card">
+                <span class="step-number" aria-hidden="true">2</span>
+                <h3>Dołącz projekt lub zdjęcie</h3>
+                <p>Prześlij tekst, grafikę albo inspirację, która pomoże określić efekt.</p>
+            </article>
+            <article class="step-card">
+                <span class="step-number" aria-hidden="true">3</span>
+                <h3>Ustal szczegóły</h3>
+                <p>Skontaktuj się, aby omówić możliwości wykonania i szczegóły realizacji.</p>
+            </article>
+        </div>
+        <div class="faq-block" aria-labelledby="faq-title">
+            <p class="section-eyebrow">Najczęstsze pytania</p>
+            <h2 id="faq-title">Zanim zapytasz o grawer</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>Na jakich materiałach można wykonać grawer?</summary>
+                    <p>GrawMe pokazuje realizacje na metalu, drewnie, szkle, akrylu i kamieniu. Możliwość wykonania graweru zależy od konkretnego przedmiotu i materiału — opisz go w wiadomości, aby omówić szczegóły.</p>
+                </details>
+                <details>
+                    <summary>Czy można przesłać własne zdjęcie lub napis?</summary>
+                    <p>Tak. Do zapytania możesz dołączyć własny tekst, grafikę, zdjęcie lub inspirację. Ułatwi to omówienie projektu i oczekiwanego efektu.</p>
+                </details>
+                <details>
+                    <summary>Jak zapytać o wycenę?</summary>
+                    <p>Napisz, jaki przedmiot chcesz spersonalizować, podaj materiał i opisz wzór. Dołącz zdjęcie przedmiotu, jeśli je masz, a następnie skontaktuj się wybraną metodą w sekcji kontaktu.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
 
     <!-- =========================
