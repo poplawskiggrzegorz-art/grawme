@@ -178,32 +178,44 @@
         }
 
         header {
-            position: relative;
-            overflow: hidden;
             text-align: center;
-            padding: 80px 20px;
-            min-height: 360px;
-            background: linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.42)), url("images/grawme-banner.webp") right center / cover no-repeat;
+            padding: 0;
+            min-height: 0;
+            background: #111;
         }
 
-        header h1,
-        header p,
-        header .header-actions {
-            position: relative;
-            z-index: 1;
+        .site-banner {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            background: #161411;
         }
 
-        header h1 {
-            font-size: clamp(36px, 5vw, 60px);
-            margin-bottom: 10px;
+        .site-banner img {
+            display: block;
+            width: 100%;
+            height: clamp(250px, 38vw, 460px);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .site-header-copy {
+            max-width: 1100px;
+            margin: auto;
+            padding: 28px 20px 38px;
+        }
+
+        .site-header-copy h1 {
+            margin-bottom: 8px;
+            font-size: clamp(30px, 4vw, 46px);
             letter-spacing: 3px;
-            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+            text-shadow: none;
         }
 
-        header p {
-            font-size: 20px;
+        .site-header-copy > p {
             color: #ccc;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+            font-size: 18px;
+            text-shadow: none;
         }
 
         .header-contact {
@@ -1084,22 +1096,22 @@
             .featured-card > img { height: 245px; }
             .faq-block { margin-top: 68px; }
 
-            header {
-                min-height: 0;
-                padding: calc(25vw + 26px) 20px 40px;
-                background-color: #1a1a1a;
-                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.18) 70%, #1a1a1a 100%), url("images/grawme-banner-mobile.webp");
-                background-size: 100% 100%, 100% auto;
-                background-position: center top, center 16px;
-                background-repeat: no-repeat, no-repeat;
+            .site-banner img {
+                height: clamp(210px, 70vw, 340px);
+                object-position: center top;
             }
 
-            header h1 {
-                font-size: 44px;
+            .site-header-copy {
+                padding: 24px 20px 32px;
             }
 
-            header p {
-                font-size: 18px;
+            .site-header-copy h1 {
+                font-size: clamp(30px, 8vw, 40px);
+                letter-spacing: 1px;
+            }
+
+            .site-header-copy > p {
+                font-size: 17px;
             }
 
             .header-actions {
@@ -1261,18 +1273,28 @@
     ========================= -->
 
     <header id="top">
-        <h1>GrawMe — grawer laserowy</h1>
-        <p>Personalizowane prezenty i pamiątki z grawerem laserowym</p>
-        <nav class="header-actions" aria-label="Skróty strony">
-            <a class="header-contact header-categories" href="#gallery-filters">
-                Wybór kategorii
-                <span aria-hidden="true">↓</span>
-            </a>
-            <a class="header-contact" href="#contact">
-                Kontakt do mnie
-                <span aria-hidden="true">↓</span>
-            </a>
-        </nav>
+        <picture class="site-banner">
+            <source media="(max-width: 600px)" srcset="images/grawme-banner-mobile.webp">
+            <img src="images/grawme-banner.webp" alt="Przykłady personalizowanych realizacji GrawMe" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="site-header-copy">
+            <h1>GrawMe — grawer laserowy</h1>
+            <p>Personalizowane prezenty i pamiątki z grawerem laserowym</p>
+            <nav class="header-actions" aria-label="Skróty strony">
+                <a class="header-contact header-categories" href="#gallery-filters">
+                    Wybór kategorii
+                    <span aria-hidden="true">↓</span>
+                </a>
+                <a class="header-contact" href="lista-prezentow.html">
+                    Lista prezentów
+                    <span aria-hidden="true">↗</span>
+                </a>
+                <a class="header-contact" href="#contact">
+                    Kontakt do mnie
+                    <span aria-hidden="true">↓</span>
+                </a>
+            </nav>
+        </div>
     </header>
 
     <section class="work-hero" aria-labelledby="work-hero-title">
@@ -1282,11 +1304,12 @@
             <p>Personalizowane prezenty, pamiątki i gadżety reklamowe — od jednej sztuki po większe nakłady. Odbiór w Lubaniu lub wysyłka na terenie Polski.</p>
             <div class="work-hero-actions">
                 <a href="#featured-work">Zobacz realizacje</a>
+                <a href="lista-prezentow.html">Lista pomysłów na prezent</a>
                 <a href="#contact">Zapytaj o grawer</a>
             </div>
         </div>
         <div class="work-hero-visual">
-            <img src="images/thumbs/prezenty%20z%20grawerem%201b.webp" alt="Przykładowa realizacja graweru laserowego na metalu" fetchpriority="high" decoding="async">
+            <img src="images/thumbs/prezenty%20z%20grawerem%2058.webp" alt="Zdjęcie wygrawerowane na metalowej zawieszce" fetchpriority="high" decoding="async">
             <div class="work-hero-caption">
                 <strong>Personalizowany grawer laserowy</strong>
                 <span>Przykładowa realizacja GrawMe</span>
