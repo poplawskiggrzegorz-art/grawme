@@ -75,7 +75,7 @@
 
         .quick-menu {
             position: fixed;
-            top: 18px;
+            top: var(--quick-menu-top, 18px);
             left: 18px;
             z-index: 30;
         }
@@ -1933,6 +1933,15 @@
     </footer>
 
     <script>
+        const bannerImage = document.querySelector(".site-banner img");
+        const positionQuickMenu = () => {
+            const bannerHeight = document.querySelector(".site-banner").getBoundingClientRect().height;
+            document.documentElement.style.setProperty("--quick-menu-top", `${bannerHeight + 12}px`);
+        };
+        bannerImage.addEventListener("load", positionQuickMenu);
+        window.addEventListener("resize", positionQuickMenu);
+        positionQuickMenu();
+
         const lightbox = document.getElementById("photo-lightbox");
         const lightboxImage = document.getElementById("lightbox-image");
 
