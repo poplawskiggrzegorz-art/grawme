@@ -1,0 +1,21 @@
+.site-visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 14px auto 0;
+    padding: 8px 12px;
+    border: 1px solid rgba(214, 179, 106, 0.28);
+    border-radius: 999px;
+    background: #151515;
+    color: #d6b36a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.site-visitor-counter img {
+    display: block;
+    width: auto;
+    height: 22px;
+    max-width: 100%;
+}

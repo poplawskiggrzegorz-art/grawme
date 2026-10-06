@@ -773,6 +773,48 @@
             color: #171717;
         }
 
+        .scroll-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 9;
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border: 1px solid rgba(214, 179, 106, 0.8);
+            border-radius: 50%;
+            background: rgba(24, 24, 24, 0.94);
+            color: #f4d990;
+            font: inherit;
+            font-size: 25px;
+            line-height: 1;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 0.2s, transform 0.2s, visibility 0.2s, background-color 0.2s;
+        }
+
+        .scroll-top.is-visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #d6b36a;
+            color: #171717;
+        }
+
+        .scroll-top:focus-visible {
+            outline: 3px solid #f4d990;
+            outline-offset: 3px;
+        }
+
         .gallery img {
             width: 100%;
             height: 280px;
@@ -1097,8 +1139,9 @@
             .faq-block { margin-top: 68px; }
 
             .site-banner img {
-                height: clamp(210px, 70vw, 340px);
-                object-position: center top;
+                height: auto;
+                object-fit: contain;
+                object-position: center;
             }
 
             .site-header-copy {
@@ -1228,6 +1271,11 @@
                 font-size: 13px;
             }
 
+            .scroll-top {
+                right: 12px;
+                bottom: 12px;
+            }
+
             .tiktok-container iframe {
                 width: 100%;
                 max-width: 325px;
@@ -1235,6 +1283,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="visitor-counter.css">
 </head>
 
 <body>
@@ -1870,6 +1919,9 @@
     <a class="gallery-return" id="gallery-return" href="#gallery-filters" aria-label="Przewiń do góry do wyboru kategorii galerii">
         <span aria-hidden="true">↑</span> Wybór kategorii
     </a>
+    <button class="scroll-top" id="scroll-top" type="button" aria-label="Przewiń do góry" title="Przewiń do góry">
+        <span aria-hidden="true">↑</span>
+    </button>
 
 
     <!-- =========================
@@ -2055,6 +2107,17 @@
         });
         updateGalleryReturn();
 
+        const scrollTopButton = document.getElementById("scroll-top");
+        const updateScrollTopButton = () => {
+            scrollTopButton.classList.toggle("is-visible", window.scrollY > 400);
+        };
+        window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+        window.addEventListener("resize", updateScrollTopButton);
+        scrollTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        updateScrollTopButton();
+
         document.querySelectorAll(".gallery-item img").forEach((image) => {
             image.parentElement.addEventListener("click", async () => {
                 const source = (image.currentSrc || image.src).replace("/thumbs/", "/webp/");
@@ -2088,5 +2151,6 @@
         });
     </script>
 
+    <script src="visitor-counter.js" defer></script>
 </body>
 </html>

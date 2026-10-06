@@ -41,9 +41,24 @@
         .gift-slot figcaption { padding: 10px 13px; color: #aaa397; font-size: 12px; }
         .gift-section-cta { margin-top: 17px; }
         .gift-section-cta a { color: #f4d990; }
+        .scroll-top {
+            position: fixed; right: 22px; bottom: 22px; z-index: 20;
+            display: grid; width: 48px; height: 48px; place-items: center;
+            border: 1px solid rgba(214, 179, 106, .8); border-radius: 50%;
+            background: rgba(24, 24, 24, .94); color: #f4d990; font: inherit;
+            font-size: 25px; line-height: 1; cursor: pointer;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+            opacity: 0; visibility: hidden; pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity .2s, transform .2s, visibility .2s, background-color .2s;
+        }
+        .scroll-top.is-visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+        .scroll-top:hover { background: #d6b36a; color: #171717; }
+        .scroll-top:focus-visible { outline: 3px solid #f4d990; outline-offset: 3px; }
         @media (max-width: 700px) { .gift-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; } .gift-placeholder { min-height: 175px; } }
-        @media (max-width: 430px) { .gift-grid { grid-template-columns: 1fr; } .gift-placeholder { min-height: 205px; } .gift-section-heading { display: block; } }
+        @media (max-width: 430px) { .gift-grid { grid-template-columns: 1fr; } .gift-placeholder { min-height: 205px; } .gift-section-heading { display: block; } .scroll-top { right: 12px; bottom: 12px; } }
     </style>
+    <link rel="stylesheet" href="visitor-counter.css">
 </head>
 <body>
     <div class="topbar">
@@ -144,5 +159,17 @@
         </section>
     </main>
     <footer>GrawMe · prezenty z grawerem · odbiór w Lubaniu · wysyłka w Polsce</footer>
+    <button class="scroll-top" id="scroll-top" type="button" aria-label="Przewiń do góry" title="Przewiń do góry">
+        <span aria-hidden="true">↑</span>
+    </button>
+    <script>
+        const scrollTopButton = document.getElementById("scroll-top");
+        const updateScrollTopButton = () => scrollTopButton.classList.toggle("is-visible", window.scrollY > 400);
+        window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+        window.addEventListener("resize", updateScrollTopButton);
+        scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        updateScrollTopButton();
+    </script>
+    <script src="visitor-counter.js" defer></script>
 </body>
 </html>
